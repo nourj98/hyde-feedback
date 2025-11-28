@@ -2,6 +2,11 @@
 
 This is the code for the paper: [Revisiting Feedback Models for HyDE](https://arxiv.org/abs/2511.19349)
 
+## Overview
+
+Recent approaches that leverage large language models (LLMs) for pseudo-relevance feedback (PRF) have generally not utilized well-established feedback models like Rocchio and RM3 when expanding queries for sparse retrievers like BM25. Instead, they often opt for a simple string concatenation of the query and LLM-generated expansion content. But is this optimal? To answer this question, we revisit and systematically evaluate traditional feedback models in the context of HyDE, a popular method that enriches query representations with LLM-generated hypothetical answer documents. Our experiments show that HyDE's effectiveness can be substantially improved when leveraging feedback algorithms such as Rocchio to extract and weight expansion terms, providing a simple way to further enhance the accuracy of LLM-based PRF methods.
+
+
 ## Setup
 
 We use the following packages:
@@ -33,7 +38,7 @@ where:
 ```--feedback_mechanism```: Feedback mechanism for creating HyDE query (Options: 'hyde', 'rocchio', 'rm3', 'mugi', 'naive') \
 ```--output_folder```: Folder to save HyDE ranking 
 
-This general code should extend to additional corpora (as long as its in Pyserini). To do so, just add to THE_SPARSE_INDEX and THE_TOPICS in modules/index_paths.py
+This general code should extend to additional corpora (as long as its in Pyserini). To do so, just add to THE_SPARSE_INDEX and THE_TOPICS in ```modules/index_paths.py```
 
 Running our Query2Doc and generic BM25 pseudo-relevance feedback  baselines should be just as simple as the above!
 
@@ -58,7 +63,7 @@ python run_prf.py \
     --output_folder $output_folder \
 ```
 
-If you leave ```--feedback_mechanism``` blank, this will run standard BM25. Otherwise, this will run similarly to run_hyde.py
+If you leave ```--feedback_mechanism``` blank, this will run standard BM25. Otherwise, this will run similarly to ```run_hyde.py```
 
 ## Citation
 
