@@ -38,7 +38,7 @@ where:
 ```--feedback_mechanism```: Feedback mechanism for creating HyDE query (Options: 'hyde', 'rocchio', 'rm3', 'mugi', 'naive') \
 ```--output_folder```: Folder to save HyDE ranking 
 
-This general code should extend to additional corpora (as long as its in Pyserini). To do so, just add to THE_SPARSE_INDEX and THE_TOPICS in ```modules/index_paths.py```
+This general code should extend to additional corpora (as long as its in Pyserini). To do so, just add to THE_SPARSE_INDEX and THE_TOPICS in ```modules/index_paths.py``` and add a HyDE prompt to ```modules/hyde.py```. 
 
 Running our Query2Doc and generic BM25 pseudo-relevance feedback  baselines should be just as simple as the above!
 

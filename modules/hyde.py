@@ -46,10 +46,6 @@ SCIDOCS = """Please write a scientific paper passage that would be relevant to t
 Title: {}
 Related Passage:"""
 
-NQ = """Please write a Wikipedia article to answer the question.
-Question: {}
-Passage:"""
-
 
 prompt_dict = {
     # Web-style collections
@@ -65,10 +61,6 @@ prompt_dict = {
     'scifact': SCIFACT,
     'covid': TREC_COVID,
     'scidocs': SCIDOCS,
-
-    # QA datasets
-    'nq': NQ,
-    'hotpotqa': NQ,
 
     # Financial and argumentation datasets
     'fiqa': FIQA,
